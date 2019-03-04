@@ -20,6 +20,7 @@ add_shortcode( 'contact-form-email', 'contact_form_email_func' );
 
 
 /*
+HOW TO add custom elementor form to MyListing listings
   1. Create a Elementor section template
   2. Add a form to template
   3. Add a hidden field to form
@@ -30,6 +31,7 @@ add_shortcode( 'contact-form-email', 'contact_form_email_func' );
 */
 
 /*
+TODO
 Could add a fallback to listing owner email if no contact email address.
 */
 
