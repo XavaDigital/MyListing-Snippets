@@ -1,0 +1,33 @@
+/*
+* [contact-form-email]
+* Retrieve listing contact email for use in custom elementor contact form
+*/
+function contact_form_email_func( $atts ){
+	$job_email = get_post_meta(get_the_ID(), '_job_email')[0];
+	if(!$job_email){
+		$custom_css = "
+	    #custom-contact-form{
+	      display: none;
+	    }";
+	  wp_register_style( 'dummy-handle', false );
+		wp_enqueue_style( 'dummy-handle' );
+		wp_add_inline_style('dummy-handle', $custom_css);
+	}
+	return $job_email;
+}
+add_shortcode( 'contact-form-email', 'contact_form_email_func' );
+
+
+/*
+  1. Create a section template
+  2. Add a form to template
+  3. Add a hidden field to form
+  4. Click Advanced tab of hidden field. Add default value as Shortcode with [contact-form-email] as value.
+  5. Copy form field shortcode to the 'To' field for email.
+  6. Add Elementor section shortcode to a shortcode block in the listing type. Give the shortcode block an ID of 'custom-contact-form'.
+*/
+
+/*
+Could add a fallback to listing owner email if no contact email address.
+*/
+
