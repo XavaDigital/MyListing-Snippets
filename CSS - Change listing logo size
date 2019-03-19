@@ -1,0 +1,18 @@
+/*For desktop layout*/
+.profile-name {
+  min-height: 80px;
+  padding-left: 90px;
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+}
+
+/*For mobile device layout*/
+@media only screen and (max-width: 768px){
+	.profile-avatar {
+	  height: 60px;
+	  width: 60px;
+	}
+}
