@@ -1,7 +1,7 @@
 /*
 * [contact-form-email]
 * Retrieve listing contact email for use in custom elementor contact form
-* Form hidden if no contact email address on listing
+* If listing contact email is not present, the form will send to the listing owner
 */
 function contact_form_email_func( $atts ){
 	$postID = get_the_ID();
@@ -25,12 +25,7 @@ HOW TO add custom elementor form to MyListing listings
   3. Add a hidden field to form
   4. Click Advanced tab of hidden field. Add default value as Shortcode with [contact-form-email] as value.
   5. Copy form field shortcode to the 'To' field for email.
-  6. Add Elementor section shortcode to a shortcode block in the listing type. Give the shortcode block an ID of 'custom-contact-form'.
-  7. Copy/paste above code into functions.php
+  6. Add Elementor section shortcode to a shortcode block in the listing type. 
+  7. If you want the form to be hidden if no Contact Email is present, give the shortcode block an ID of 'custom-contact-form'.
+  8. Copy/paste above code into functions.php
 */
-
-/*
-TODO
-Could add a fallback to listing owner email if no contact email address.
-*/
-
